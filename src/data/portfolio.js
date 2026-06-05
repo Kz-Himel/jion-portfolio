@@ -1,0 +1,48 @@
+export const portfolioData = {
+  personal: {
+    name: "Alex Nova",
+    title: "Graphics Designer",
+    tagline: "Visual Storyteller & Brand Architect",
+    bio: "I craft premium visual identities and immersive digital experiences that transform brands into unforgettable stories. With 6+ years of expertise across branding, UI/UX, and digital design, I bridge the gap between artistic vision and strategic communication.",
+    bioExtended: "Every pixel I place carries intention. From startup logos to enterprise brand systems, I've helped over 120 clients worldwide build visual languages that command attention, inspire trust, and drive growth. My work lives at the intersection of aesthetics and strategy.",
+    email: "alex.nova@design.studio",
+    phone: "+1 (555) 234-5678",
+    whatsapp: "+15552345678",
+    messenger: "m.me/alexnovadesign",
+    location: "New York, USA",
+    available: true,
+    experience: "6+",
+    projects: "120+",
+    clients: "80+",
+    awards: "12",
+  },
+
+  skills: [
+    { id: 1, name: "Adobe Photoshop", shortName: "Photoshop", icon: "SiAdobephotoshop", level: 98, color: "#31A8FF", category: "Adobe Suite", description: "Photo manipulation, compositing, and digital art mastery" },
+    { id: 2, name: "Adobe Illustrator", shortName: "Illustrator", icon: "SiAdobeillustrator", level: 96, color: "#FF9A00", category: "Adobe Suite", description: "Vector illustration, logo design, and brand identity systems" },
+    { id: 3, name: "Figma", shortName: "Figma", icon: "SiFigma", level: 95, color: "#F24E1E", category: "UI/UX", description: "UI/UX prototyping, design systems, and collaborative design" },
+    { id: 4, name: "Canva Pro", shortName: "Canva", icon: "SiCanva", level: 92, color: "#00C4CC", category: "Design Tools", description: "Social media graphics, presentations, and marketing materials" },
+    { id: 5, name: "UI/UX Design", shortName: "UI/UX", icon: "MdOutlineDesignServices", level: 94, color: "#FF6B1A", category: "Design", description: "User-centered design, wireframing, and interaction design" },
+    { id: 6, name: "Brand Identity", shortName: "Branding", icon: "MdBrandingWatermark", level: 97, color: "#00D4FF", category: "Strategy", description: "Brand strategy, visual identity, and style guide creation" },
+    { id: 7, name: "Social Media Design", shortName: "Social Media", icon: "MdCampaign", level: 93, color: "#E1306C", category: "Digital", description: "Campaign creatives, content design, and visual storytelling" },
+    { id: 8, name: "Adobe InDesign", shortName: "InDesign", icon: "SiAdobeindesign", level: 88, color: "#FF3366", category: "Adobe Suite", description: "Editorial design, layouts, and print production" },
+  ],
+
+  projects: [
+    { id: 1, title: "Nexus Brand Identity", description: "Complete brand identity system for a tech startup — including logo, color palette, typography, and brand guidelines.", category: "Brand Identity", tags: ["Illustrator", "Figma", "Branding"], image: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=800&q=80", featured: true, year: "2024" },
+    { id: 2, title: "Aurora Mobile App UI", description: "Futuristic fintech app UI design with dark glassmorphism aesthetic, intuitive user flows, and micro-interactions.", category: "UI/UX Design", tags: ["Figma", "UI/UX", "Prototyping"], image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=800&q=80", featured: true, year: "2024" },
+    { id: 3, title: "Velvet Campaign Creatives", description: "Luxury fashion brand social media campaign with 40+ unique assets across Instagram, Pinterest, and TikTok.", category: "Social Media", tags: ["Photoshop", "Canva", "Campaign"], image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80", featured: true, year: "2023" },
+    { id: 4, title: "Solaris Real Estate", description: "Premium real estate brand with architectural logo design, marketing collateral, and digital presence.", category: "Brand Identity", tags: ["Illustrator", "InDesign", "Branding"], image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80", featured: false, year: "2023" },
+    { id: 5, title: "Pulse Music Platform", description: "Streaming platform UI/UX with dark aesthetic, custom icon system, and immersive listening experience design.", category: "UI/UX Design", tags: ["Figma", "UI/UX", "Icons"], image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80", featured: false, year: "2023" },
+    { id: 6, title: "EcoRoot Packaging Design", description: "Sustainable brand packaging for organic food company — biodegradable materials with earthy, premium visual identity.", category: "Print & Packaging", tags: ["Illustrator", "Photoshop", "Print"], image: "https://images.unsplash.com/photo-1592921870789-04563d55041c?w=800&q=80", featured: false, year: "2022" },
+  ],
+
+  experience: [
+    { id: 1, type: "work", title: "Senior Brand Designer", organization: "Studio Apex Creative Agency", period: "2022 — Present", duration: "2+ years", description: "Leading brand identity projects for Fortune 500 clients. Managing a team of 4 designers and delivering 30+ brand systems annually.", highlights: ["Team Leadership", "Brand Strategy", "Client Relations"], icon: "work" },
+    { id: 2, type: "work", title: "UI/UX Designer", organization: "Pixel Forge Digital Studio", period: "2020 — 2022", duration: "2 years", description: "Designed mobile and web interfaces for 25+ SaaS products. Established design system standards adopted company-wide.", highlights: ["Design Systems", "Mobile-first", "Figma Expert"], icon: "work" },
+    { id: 3, type: "freelance", title: "Freelance Brand Identity Designer", organization: "Self-Employed", period: "2018 — Present", duration: "6 years", description: "Served 80+ clients globally across e-commerce, SaaS, hospitality, and lifestyle industries.", highlights: ["120+ Projects", "Global Clients", "Full Ownership"], icon: "freelance" },
+    { id: 4, type: "education", title: "Bachelor of Design (BDes)", organization: "Parsons School of Design", period: "2016 — 2020", duration: "4 years", description: "Majored in Communication Design with distinction. Graduated top 5% of cohort with Dean's List recognition.", highlights: ["Dean's List", "Cum Laude", "Communication Design"], icon: "education" },
+    { id: 5, type: "certification", title: "Google UX Design Certificate", organization: "Google / Coursera", period: "2021", duration: "6 months", description: "Completed comprehensive UX design program covering user research, wireframing, prototyping, and usability testing.", highlights: ["UX Research", "Prototyping", "Usability Testing"], icon: "certification" },
+    { id: 6, type: "certification", title: "Adobe Certified Professional", organization: "Adobe Inc.", period: "2019", duration: "Certification", description: "Certified in Photoshop, Illustrator, and InDesign. Top-tier proficiency validated by Adobe's global certification program.", highlights: ["Photoshop", "Illustrator", "InDesign"], icon: "certification" },
+  ],
+};
