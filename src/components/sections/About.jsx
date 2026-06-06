@@ -1,13 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { FiCheckCircle } from "react-icons/fi";
-
 import { HiOutlineSparkles } from "react-icons/hi";
 
 import { portfolioData } from "@/data/portfolio";
-
 import SectionHeading from "@/components/ui/SectionHeading";
 
 import {
@@ -20,15 +19,10 @@ import {
 
 const highlights = [
   "Brand Identity & Logo Design",
-
   "UI/UX Design & Prototyping",
-
   "Social Media & Campaign Design",
-
   "Print & Packaging Design",
-
   "Design System Architecture",
-
   "Creative Direction",
 ];
 
@@ -48,7 +42,7 @@ export default function About() {
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mt-4">
-          {/* Left */}
+          {/* LEFT SIDE */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -58,9 +52,24 @@ export default function About() {
           >
             <div className="relative rounded-3xl overflow-hidden gradient-border glass p-1">
               <div className="relative rounded-[22px] overflow-hidden bg-gradient-to-br from-dark-600 to-dark-800 aspect-[4/5]">
+                {/* Background */}
                 <div className="absolute inset-0 hex-bg opacity-30" />
 
+                {/* Main Content */}
                 <div className="absolute inset-0 flex items-center justify-center">
+                  {/* IMAGE */}
+                  <div className="absolute top-8 z-20">
+                    <Image
+                      src="/images/Profile.png"
+                      alt="Profile"
+                      width={370}
+                      height={370}
+                      priority
+                      className="object-contain drop-shadow-[0_0_30px_rgba(0,212,255,0.35)]"
+                    />
+                  </div>
+
+                  {/* SVG Animation */}
                   <svg viewBox="0 0 400 500" className="w-full h-full">
                     <defs>
                       <linearGradient
@@ -73,7 +82,7 @@ export default function About() {
                         <stop
                           offset="0%"
                           stopColor="#FF6B1A"
-                          stopOpacity="0.8"
+                          stopOpacity="0.9"
                         />
 
                         <stop
@@ -113,35 +122,6 @@ export default function About() {
                       fill="rgba(255,107,26,0.05)"
                       stroke="rgba(255,107,26,0.15)"
                       strokeWidth="1"
-                    />
-
-                    <rect
-                      x="100"
-                      y="160"
-                      width="200"
-                      height="160"
-                      rx="10"
-                      fill="rgba(13,13,13,0.9)"
-                      stroke="rgba(255,107,26,0.3)"
-                      strokeWidth="1.5"
-                    />
-
-                    <rect
-                      x="108"
-                      y="168"
-                      width="184"
-                      height="140"
-                      rx="6"
-                      fill="rgba(0,0,0,0.8)"
-                    />
-
-                    <rect
-                      x="115"
-                      y="175"
-                      width="100"
-                      height="8"
-                      rx="3"
-                      fill="rgba(255,107,26,0.5)"
                     />
 
                     <rect
@@ -237,9 +217,11 @@ export default function About() {
                   </svg>
                 </div>
 
+                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent" />
 
-                <div className="absolute bottom-6 left-6 right-6">
+                {/* Bottom Card */}
+                <div className="absolute bottom-6 left-6 right-6 z-30">
                   <div className="glass-orange rounded-2xl px-5 py-3">
                     <p className="font-display font-bold text-white text-lg">
                       {personal.name}
@@ -253,11 +235,12 @@ export default function About() {
               </div>
             </div>
 
+            {/* Projects */}
             <motion.div
               variants={float}
               initial="initial"
               animate="animate"
-              className="absolute -right-6 top-16 glass-cyan rounded-2xl px-5 py-4 glow-cyan hidden lg:block"
+              className="absolute -right-6 top-16 z-40 glass-cyan rounded-2xl px-5 py-4 glow-cyan hidden lg:block"
             >
               <div className="font-display font-black text-3xl gradient-text-cyan">
                 {personal.projects}
@@ -267,14 +250,10 @@ export default function About() {
                 Projects Done
               </div>
             </motion.div>
-
+            {/* Awards */}
             <motion.div
-              initial={{
-                y: 0,
-              }}
-              animate={{
-                y: [0, -12, 0],
-              }}
+              initial={{ y: 0 }}
+              animate={{ y: [0, -12, 0] }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
@@ -298,7 +277,7 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          {/* Right */}
+          {/* RIGHT SIDE */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -348,47 +327,6 @@ export default function About() {
 
                   <span className="text-white/70 text-sm">{item}</span>
                 </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              className="grid grid-cols-3 gap-4 pt-4 border-t border-white/5"
-            >
-              {[
-                {
-                  label: "Location",
-
-                  value: personal.location,
-                },
-
-                {
-                  label: "Experience",
-
-                  value: personal.experience + " Years",
-                },
-
-                {
-                  label: "Status",
-
-                  value: personal.available ? "Available" : "Busy",
-
-                  green: personal.available,
-                },
-              ].map((info, i) => (
-                <div key={i}>
-                  <p className="text-white/30 text-xs font-mono uppercase tracking-wider mb-1">
-                    {info.label}
-                  </p>
-
-                  <p
-                    className={`font-medium text-sm ${
-                      info.green ? "text-green-400" : "text-white/80"
-                    }`}
-                  >
-                    {info.value}
-                  </p>
-                </div>
               ))}
             </motion.div>
           </motion.div>

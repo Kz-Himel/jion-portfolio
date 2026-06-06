@@ -252,88 +252,12 @@ export default function Hero() {
                 <div className="w-full h-full bg-gradient-to-br from-brand-orange/20 via-dark-600 to-brand-cyan/10 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 grid-pattern opacity-20" />
 
-                  {/* <svg
-                    viewBox="0 0 200 200"
-                    className="w-4/5 h-4/5 relative z-10"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="fig-grad"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="100%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#FF6B1A"
-                          stopOpacity="0.9"
-                        />
-
-                        <stop
-                          offset="100%"
-                          stopColor="#00D4FF"
-                          stopOpacity="0.9"
-                        />
-                      </linearGradient>
-                    </defs>
-
-                    <circle
-                      cx="100"
-                      cy="55"
-                      r="28"
-                      fill="url(#fig-grad)"
-                      opacity="0.9"
-                    />
-
-                    <path
-                      d="M45 110 Q100 90 155 110 L160 170 Q100 185 40 170 Z"
-                      fill="url(#fig-grad)"
-                      opacity="0.7"
-                    />
-
-                    <rect
-                      x="80"
-                      y="130"
-                      width="40"
-                      height="5"
-                      rx="2"
-                      fill="#FF6B1A"
-                      opacity="0.9"
-                    />
-
-                    <rect
-                      x="96"
-                      y="118"
-                      width="8"
-                      height="25"
-                      rx="2"
-                      fill="#00D4FF"
-                      opacity="0.9"
-                    />
-
-                    <rect
-                      x="20"
-                      y="40"
-                      width="20"
-                      height="20"
-                      rx="4"
-                      fill="#FF6B1A"
-                      opacity="0.4"
-                      transform="rotate(15 20 40)"
-                    />
-
-                    <circle
-                      cx="170"
-                      cy="60"
-                      r="10"
-                      fill="#00D4FF"
-                      opacity="0.4"
-                    />
-                  </svg> */}
-                  <Image>
-
-                  </Image>
+                  <Image
+                    src="/images/Profile.png"
+                    alt="Logo"
+                    width={400}
+                    height={400}
+                  />
                 </div>
               </motion.div>
 

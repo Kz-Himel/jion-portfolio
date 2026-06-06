@@ -22,15 +22,57 @@ export const portfolioData = {
   },
 
   skills: [
-    { id: 1, name: "Adobe Photoshop", shortName: "Photoshop", icon: "SiAdobephotoshop", level: 98, color: "#31A8FF", category: "Adobe Suite", description: "Photo manipulation, compositing, and digital art mastery" },
-    { id: 2, name: "Adobe Illustrator", shortName: "Illustrator", icon: "SiAdobeillustrator", level: 96, color: "#FF9A00", category: "Adobe Suite", description: "Vector illustration, logo design, and brand identity systems" },
-    { id: 3, name: "Figma", shortName: "Figma", icon: "SiFigma", level: 95, color: "#F24E1E", category: "UI/UX", description: "UI/UX prototyping, design systems, and collaborative design" },
-    { id: 4, name: "Canva Pro", shortName: "Canva", icon: "SiCanva", level: 92, color: "#00C4CC", category: "Design Tools", description: "Social media graphics, presentations, and marketing materials" },
-    { id: 5, name: "UI/UX Design", shortName: "UI/UX", icon: "MdOutlineDesignServices", level: 94, color: "#FF6B1A", category: "Design", description: "User-centered design, wireframing, and interaction design" },
-    { id: 6, name: "Brand Identity", shortName: "Branding", icon: "MdBrandingWatermark", level: 97, color: "#00D4FF", category: "Strategy", description: "Brand strategy, visual identity, and style guide creation" },
-    { id: 7, name: "Social Media Design", shortName: "Social Media", icon: "MdCampaign", level: 93, color: "#E1306C", category: "Digital", description: "Campaign creatives, content design, and visual storytelling" },
-    { id: 8, name: "Adobe InDesign", shortName: "InDesign", icon: "SiAdobeindesign", level: 88, color: "#FF3366", category: "Adobe Suite", description: "Editorial design, layouts, and print production" },
-  ],
+  {
+    id: 1,
+    name: "Thumbnail Design",
+    shortName: "Thumbnail",
+    icon: "MdPhotoSizeSelectLarge",
+    level: 95,
+    color: "#FF3D00",
+    category: "Digital Design",
+    description: "High-converting YouTube and social media thumbnail design"
+  },
+  {
+    id: 2,
+    name: "Social Media Design",
+    shortName: "Social Media",
+    icon: "MdCampaign",
+    level: 94,
+    color: "#E1306C",
+    category: "Marketing",
+    description: "Creative social media posts, ads, and visual content design"
+  },
+  {
+    id: 3,
+    name: "Brand Presentation Design",
+    shortName: "Presentation",
+    icon: "MdOutlineSlideshow",
+    level: 92,
+    color: "#7B61FF",
+    category: "Branding",
+    description: "Professional pitch decks, company profiles, and brand presentations"
+  },
+  {
+    id: 4,
+    name: "Marketing Material Design",
+    shortName: "Marketing",
+    icon: "MdOutlineLocalOffer",
+    level: 93,
+    color: "#00C853",
+    category: "Print & Digital",
+    description: "Flyers, brochures, banners, posters, and promotional materials"
+  },
+  {
+    id: 5,
+    name: "Packaging & Label Design",
+    shortName: "Packaging",
+    icon: "MdInventory2",
+    level: 91,
+    color: "#FFB300",
+    category: "Product Design",
+    description: "Modern packaging, product labels, and branding-focused packaging systems"
+  }
+],
 
   projects: [
     { id: 1, title: "Nexus Brand Identity", description: "Complete brand identity system for a tech startup — including logo, color palette, typography, and brand guidelines.", category: "Brand Identity", tags: ["Illustrator", "Figma", "Branding"], image: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=800&q=80", featured: true, year: "2024" },
@@ -42,11 +84,12 @@ export const portfolioData = {
   ],
 
   experience: [
-    { id: 1, type: "work", title: "Senior Brand Designer", organization: "Studio Apex Creative Agency", period: "2022 — Present", duration: "2+ years", description: "Leading brand identity projects for Fortune 500 clients. Managing a team of 4 designers and delivering 30+ brand systems annually.", highlights: ["Team Leadership", "Brand Strategy", "Client Relations"], icon: "work" },
-    { id: 2, type: "work", title: "UI/UX Designer", organization: "Pixel Forge Digital Studio", period: "2020 — 2022", duration: "2 years", description: "Designed mobile and web interfaces for 25+ SaaS products. Established design system standards adopted company-wide.", highlights: ["Design Systems", "Mobile-first", "Figma Expert"], icon: "work" },
-    { id: 3, type: "freelance", title: "Freelance Brand Identity Designer", organization: "Self-Employed", period: "2018 — Present", duration: "6 years", description: "Served 80+ clients globally across e-commerce, SaaS, hospitality, and lifestyle industries.", highlights: ["120+ Projects", "Global Clients", "Full Ownership"], icon: "freelance" },
-    { id: 4, type: "education", title: "Bachelor of Design (BDes)", organization: "Parsons School of Design", period: "2016 — 2020", duration: "4 years", description: "Majored in Communication Design with distinction. Graduated top 5% of cohort with Dean's List recognition.", highlights: ["Dean's List", "Cum Laude", "Communication Design"], icon: "education" },
-    { id: 5, type: "certification", title: "Google UX Design Certificate", organization: "Google / Coursera", period: "2021", duration: "6 months", description: "Completed comprehensive UX design program covering user research, wireframing, prototyping, and usability testing.", highlights: ["UX Research", "Prototyping", "Usability Testing"], icon: "certification" },
+    { id: 1, type: "work", title: "Graphic Designer", organization: "DressCode Ltd", period: "2025 — 2026", duration: "1+ years", description: "Leading brand identity projects for Fortune 500 clients. Managing a team of 4 designers and delivering 30+ brand systems annually.", highlights: ["Team Leadership", "Brand Strategy", "Client Relations"], icon: "work" },
+    { id: 2, type: "work", title: "Thumbnail Designer", organization: "Indian Digital Studio (Remote)", period: "2020 — 2022", duration: "2 years", description: "Designed youtube thumbanails and brand collabration", highlights: ["Design Systems", "Brand Collabration", "Design Expert"], icon: "work" },
+    { id: 3, type: "freelance", title: "Freelance Brand Identity Designer", organization: "Self-Employed", period: "2022 — Present", duration: "6 years", description: "Served 80+ clients globally across e-commerce, SaaS, hospitality, and lifestyle industries.", highlights: ["120+ Projects", "Global Clients", "Full Ownership"], icon: "freelance" },
+    { id: 4, type: "education", title: "BSc in CSE", organization: "Uttora University, Dhaka", period: "2026 —  on going", duration: "", description: "Majored in Communication Design with distinction. Graduated top 5% of cohort with Dean's List recognition.", highlights: ["Dean's List", "Cum Laude", "Communication Design"], icon: "education" },
+    { id: 5, type: "certification", title: "Graphics Design Certificate", organization: "Inovative IT", period: "2023", duration: "6 months", description: "Completed comprehensive Graphic design program covering user research, wireframing, prototyping, and usability testing.", highlights: ["UX Research", "Prototyping", "Usability Testing"], icon: "certification" },
+    { id: 5, type: "certification", title: "Graphics Design Certificate", organization: "Google / Coursera", period: "2023", duration: "6 months", description: "Completed comprehensive UX design program covering user research, wireframing, prototyping, and usability testing.", highlights: ["UX Research", "Prototyping", "Usability Testing"], icon: "certification" },
     { id: 6, type: "certification", title: "Adobe Certified Professional", organization: "Adobe Inc.", period: "2019", duration: "Certification", description: "Certified in Photoshop, Illustrator, and InDesign. Top-tier proficiency validated by Adobe's global certification program.", highlights: ["Photoshop", "Illustrator", "InDesign"], icon: "certification" },
   ],
 };
