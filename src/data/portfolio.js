@@ -25,7 +25,7 @@ export const portfolioData = {
   {
     id: 1,
     name: "Thumbnail Design",
-    shortName: "Thumbnail",
+    shortName: "Thumbnail Design",
     icon: "MdPhotoSizeSelectLarge",
     level: 95,
     color: "#FF3D00",
@@ -35,7 +35,7 @@ export const portfolioData = {
   {
     id: 2,
     name: "Social Media Design",
-    shortName: "Social Media",
+    shortName: "Social Media Design",
     icon: "MdCampaign",
     level: 94,
     color: "#E1306C",
@@ -44,8 +44,18 @@ export const portfolioData = {
   },
   {
     id: 3,
+    name: "Packaging & Label Design",
+    shortName: "Packaging & Label Design",
+    icon: "MdInventory2",
+    level: 91,
+    color: "#FFB300",
+    category: "Product Design",
+    description: "Modern packaging, product labels, and branding-focused packaging systems"
+  },
+  {
+    id: 4,
     name: "Brand Presentation Design",
-    shortName: "Presentation",
+    shortName: "Brand Presentation Design",
     icon: "MdOutlineSlideshow",
     level: 92,
     color: "#7B61FF",
@@ -53,7 +63,7 @@ export const portfolioData = {
     description: "Professional pitch decks, company profiles, and brand presentations"
   },
   {
-    id: 4,
+    id: 5,
     name: "Marketing Material Design",
     shortName: "Marketing",
     icon: "MdOutlineLocalOffer",
@@ -61,26 +71,17 @@ export const portfolioData = {
     color: "#00C853",
     category: "Print & Digital",
     description: "Flyers, brochures, banners, posters, and promotional materials"
-  },
-  {
-    id: 5,
-    name: "Packaging & Label Design",
-    shortName: "Packaging",
-    icon: "MdInventory2",
-    level: 91,
-    color: "#FFB300",
-    category: "Product Design",
-    description: "Modern packaging, product labels, and branding-focused packaging systems"
   }
 ],
 
   projects: [
-    { id: 1, title: "Nexus Brand Identity", description: "Complete brand identity system for a tech startup — including logo, color palette, typography, and brand guidelines.", category: "Brand Identity", tags: ["Illustrator", "Figma", "Branding"], image: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=800&q=80", featured: true, year: "2024" },
-    { id: 2, title: "Aurora Mobile App UI", description: "Futuristic fintech app UI design with dark glassmorphism aesthetic, intuitive user flows, and micro-interactions.", category: "UI/UX Design", tags: ["Figma", "UI/UX", "Prototyping"], image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=800&q=80", featured: true, year: "2024" },
-    { id: 3, title: "Velvet Campaign Creatives", description: "Luxury fashion brand social media campaign with 40+ unique assets across Instagram, Pinterest, and TikTok.", category: "Social Media", tags: ["Photoshop", "Canva", "Campaign"], image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80", featured: true, year: "2023" },
-    { id: 4, title: "Solaris Real Estate", description: "Premium real estate brand with architectural logo design, marketing collateral, and digital presence.", category: "Brand Identity", tags: ["Illustrator", "InDesign", "Branding"], image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80", featured: false, year: "2023" },
-    { id: 5, title: "Pulse Music Platform", description: "Streaming platform UI/UX with dark aesthetic, custom icon system, and immersive listening experience design.", category: "UI/UX Design", tags: ["Figma", "UI/UX", "Icons"], image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80", featured: false, year: "2023" },
-    { id: 6, title: "EcoRoot Packaging Design", description: "Sustainable brand packaging for organic food company — biodegradable materials with earthy, premium visual identity.", category: "Print & Packaging", tags: ["Illustrator", "Photoshop", "Print"], image: "https://images.unsplash.com/photo-1592921870789-04563d55041c?w=800&q=80", featured: false, year: "2022" },
+    { id: 1, title: "Nexus Brand Identity", description: "Complete brand identity system for a tech startup — including logo, color palette, typography, and brand guidelines.", category: "Brand Identity", tags: ["Illustrator", "Figma", "Branding"], image: "/images/1.jpg", featured: true, year: "2024" },
+    { id: 2, title: "Aurora Mobile App UI", description: "Futuristic fintech app UI design with dark glassmorphism aesthetic, intuitive user flows, and micro-interactions.", category: "UI/UX Design", tags: ["Figma", "UI/UX", "Prototyping"], image: "/images/2.jpg", featured: true, year: "2024" },
+    { id: 3, title: "Velvet Campaign Creatives", description: "Luxury fashion brand social media campaign with 40+ unique assets across Instagram, Pinterest, and TikTok.", category: "Social Media", tags: ["Photoshop", "Canva", "Campaign"], image: "/images/3.jpg", featured: true, year: "2023" },
+    { id: 4, title: "Solaris Real Estate", description: "Premium real estate brand with architectural logo design, marketing collateral, and digital presence.", category: "Brand Identity", tags: ["Illustrator", "InDesign", "Branding"], image: "/images/4.jpg", featured: false, year: "2023" },
+    { id: 5, title: "Pulse Music Platform", description: "Streaming platform UI/UX with dark aesthetic, custom icon system, and immersive listening experience design.", category: "UI/UX Design", tags: ["Figma", "UI/UX", "Icons"], image: "/images/5.jpg", featured: false, year: "2023" },
+    { id: 6, title: "EcoRoot Packaging Design", description: "Sustainable brand packaging for organic food company — biodegradable materials with earthy, premium visual identity.", category: "Print & Packaging", tags: ["Illustrator", "Photoshop", "Print"], image: "/images/6.jpg", featured: false, year: "2022" },
+    { id: 7, title: "EcoRoot Packaging Design", description: "Sustainable brand packaging for organic food company — biodegradable materials with earthy, premium visual identity.", category: "Print & Packaging", tags: ["Illustrator", "Photoshop", "Print"], image: "/images/7.jpg", featured: false, year: "2022" },
   ],
 
   experience: [
@@ -89,7 +90,7 @@ export const portfolioData = {
     { id: 3, type: "freelance", title: "Freelance Brand Identity Designer", organization: "Self-Employed", period: "2022 — Present", duration: "6 years", description: "Served 80+ clients globally across e-commerce, SaaS, hospitality, and lifestyle industries.", highlights: ["120+ Projects", "Global Clients", "Full Ownership"], icon: "freelance" },
     { id: 4, type: "education", title: "BSc in CSE", organization: "Uttora University, Dhaka", period: "2026 —  on going", duration: "", description: "Majored in Communication Design with distinction. Graduated top 5% of cohort with Dean's List recognition.", highlights: ["Dean's List", "Cum Laude", "Communication Design"], icon: "education" },
     { id: 5, type: "certification", title: "Graphics Design Certificate", organization: "Inovative IT", period: "2023", duration: "6 months", description: "Completed comprehensive Graphic design program covering user research, wireframing, prototyping, and usability testing.", highlights: ["UX Research", "Prototyping", "Usability Testing"], icon: "certification" },
-    { id: 5, type: "certification", title: "Graphics Design Certificate", organization: "Google / Coursera", period: "2023", duration: "6 months", description: "Completed comprehensive UX design program covering user research, wireframing, prototyping, and usability testing.", highlights: ["UX Research", "Prototyping", "Usability Testing"], icon: "certification" },
-    { id: 6, type: "certification", title: "Adobe Certified Professional", organization: "Adobe Inc.", period: "2019", duration: "Certification", description: "Certified in Photoshop, Illustrator, and InDesign. Top-tier proficiency validated by Adobe's global certification program.", highlights: ["Photoshop", "Illustrator", "InDesign"], icon: "certification" },
+    { id: 6, type: "certification", title: "Graphics Design Certificate", organization: "Google / Coursera", period: "2023", duration: "6 months", description: "Completed comprehensive UX design program covering user research, wireframing, prototyping, and usability testing.", highlights: ["UX Research", "Prototyping", "Usability Testing"], icon: "certification" },
+    { id: 7, type: "certification", title: "Adobe Certified Professional", organization: "Adobe Inc.", period: "2019", duration: "Certification", description: "Certified in Photoshop, Illustrator, and InDesign. Top-tier proficiency validated by Adobe's global certification program.", highlights: ["Photoshop", "Illustrator", "InDesign"], icon: "certification" },
   ],
 };
