@@ -2,51 +2,34 @@
 
 import { motion } from "framer-motion";
 
-import {
-  FiArrowDown,
-  FiDownload,
-} from "react-icons/fi";
+import { FiArrowDown, FiDownload } from "react-icons/fi";
 
-import {
-  HiOutlineLightningBolt,
-} from "react-icons/hi";
+import { HiOutlineLightningBolt } from "react-icons/hi";
 
 import { portfolioData } from "@/data/portfolio";
 
-import {
-  float,
-  glowPulse,
-  rotateSlowly,
-  heroText,
-} from "@/lib/animations";
+import { float, glowPulse, rotateSlowly, heroText } from "@/lib/animations";
+import Image from "next/image";
 
 const stats = [
   {
     label: "Years Exp.",
-    value:
-      portfolioData.personal
-        .experience,
+    value: portfolioData.personal.experience,
   },
 
   {
     label: "Projects",
-    value:
-      portfolioData.personal
-        .projects,
+    value: portfolioData.personal.projects,
   },
 
   {
     label: "Clients",
-    value:
-      portfolioData.personal
-        .clients,
+    value: portfolioData.personal.clients,
   },
 
   {
     label: "Awards",
-    value:
-      portfolioData.personal
-        .awards,
+    value: portfolioData.personal.awards,
   },
 ];
 
@@ -117,10 +100,7 @@ export default function Hero() {
                 }}
                 className="font-mono text-brand-orange/70 text-sm tracking-[0.3em] uppercase mb-3"
               >
-                {
-                  portfolioData.personal
-                    .tagline
-                }
+                {portfolioData.personal.tagline}
               </motion.p>
             </div>
 
@@ -134,21 +114,13 @@ export default function Hero() {
                 }}
                 className="font-display text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[0.9] tracking-tight"
               >
-                <span className="text-white block">
-                  Creative
-                </span>
+                <span className="text-white block">Creative</span>
 
-                <span className="gradient-text-orange block">
-                  Designer
-                </span>
+                <span className="gradient-text-orange block">Designer</span>
 
-                <span className="text-white/20 block">
-                  &amp; Visual
-                </span>
+                <span className="text-white/20 block">&amp; Visual</span>
 
-                <span className="gradient-text-cyan block">
-                  Artist
-                </span>
+                <span className="gradient-text-cyan block">Artist</span>
               </motion.h1>
             </div>
 
@@ -167,10 +139,7 @@ export default function Hero() {
               }}
               className="mt-8 text-white/50 text-lg max-w-xl leading-relaxed lg:mx-0 mx-auto"
             >
-              {
-                portfolioData.personal
-                  .bio
-              }
+              {portfolioData.personal.bio}
             </motion.p>
 
             <motion.div
@@ -196,22 +165,13 @@ export default function Hero() {
                   scale: 0.96,
                 }}
                 onClick={() =>
-                  document
-                    .querySelector(
-                      "#projects"
-                    )
-                    ?.scrollIntoView(
-                      {
-                        behavior:
-                          "smooth",
-                      }
-                    )
+                  document.querySelector("#projects")?.scrollIntoView({
+                    behavior: "smooth",
+                  })
                 }
                 className="btn-primary px-8 py-4 rounded-xl font-semibold text-white text-base relative z-10 inline-flex items-center gap-2 justify-center"
               >
-                <span className="relative z-10">
-                  View My Work
-                </span>
+                <span className="relative z-10">View My Work</span>
 
                 <FiArrowDown className="relative z-10 animate-bounce" />
               </motion.button>
@@ -226,7 +186,6 @@ export default function Hero() {
                 className="px-8 py-4 rounded-xl font-semibold text-white/80 text-base border border-white/10 hover:text-white glass transition-all duration-300 inline-flex items-center gap-2 justify-center"
               >
                 <FiDownload className="w-4 h-4" />
-
                 Download CV
               </motion.button>
             </motion.div>
@@ -246,26 +205,17 @@ export default function Hero() {
               }}
               className="mt-14 grid grid-cols-4 gap-6 max-w-md lg:mx-0 mx-auto"
             >
-              {stats.map(
-                (stat, i) => (
-                  <div
-                    key={i}
-                    className="text-center lg:text-left"
-                  >
-                    <div className="font-display font-black text-2xl md:text-3xl gradient-text-orange">
-                      {
-                        stat.value
-                      }
-                    </div>
-
-                    <div className="text-white/40 text-xs mt-1 font-mono uppercase tracking-widest">
-                      {
-                        stat.label
-                      }
-                    </div>
+              {stats.map((stat, i) => (
+                <div key={i} className="text-center lg:text-left">
+                  <div className="font-display font-black text-2xl md:text-3xl gradient-text-orange">
+                    {stat.value}
                   </div>
-                )
-              )}
+
+                  <div className="text-white/40 text-xs mt-1 font-mono uppercase tracking-widest">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </motion.div>
           </div>
 
@@ -302,7 +252,7 @@ export default function Hero() {
                 <div className="w-full h-full bg-gradient-to-br from-brand-orange/20 via-dark-600 to-brand-cyan/10 flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 grid-pattern opacity-20" />
 
-                  <svg
+                  {/* <svg
                     viewBox="0 0 200 200"
                     className="w-4/5 h-4/5 relative z-10"
                   >
@@ -380,7 +330,10 @@ export default function Hero() {
                       fill="#00D4FF"
                       opacity="0.4"
                     />
-                  </svg>
+                  </svg> */}
+                  <Image>
+
+                  </Image>
                 </div>
               </motion.div>
 
@@ -409,28 +362,17 @@ export default function Hero() {
                   angle: 270,
                 },
               ].map((badge, i) => {
-                const rad =
-                  (badge.angle *
-                    Math.PI) /
-                  180;
+                const rad = (badge.angle * Math.PI) / 180;
 
                 const r = 140;
 
-                const x =
-                  50 +
-                  Math.cos(rad) *
-                    r;
+                const x = 50 + Math.cos(rad) * r;
 
-                const y =
-                  50 +
-                  Math.sin(rad) *
-                    r;
+                const y = 50 + Math.sin(rad) * r;
 
                 return (
                   <motion.div
-                    key={
-                      badge.label
-                    }
+                    key={badge.label}
                     initial={{
                       opacity: 0,
                       scale: 0,
@@ -440,13 +382,9 @@ export default function Hero() {
                       scale: 1,
                     }}
                     transition={{
-                      delay:
-                        1 +
-                        i *
-                          0.15,
+                      delay: 1 + i * 0.15,
 
-                      type:
-                        "spring",
+                      type: "spring",
                     }}
                     className="absolute w-12 h-12 rounded-xl glass-orange flex items-center justify-center"
                     style={{
@@ -454,8 +392,7 @@ export default function Hero() {
 
                       top: `${y}%`,
 
-                      transform:
-                        "translate(-50%,-50%)",
+                      transform: "translate(-50%,-50%)",
 
                       border: `1px solid ${badge.color}30`,
 
@@ -465,13 +402,10 @@ export default function Hero() {
                     <span
                       className="font-mono text-xs font-bold"
                       style={{
-                        color:
-                          badge.color,
+                        color: badge.color,
                       }}
                     >
-                      {
-                        badge.label
-                      }
+                      {badge.label}
                     </span>
                   </motion.div>
                 );
@@ -503,8 +437,7 @@ export default function Hero() {
             }}
             transition={{
               duration: 1.5,
-              repeat:
-                Infinity,
+              repeat: Infinity,
             }}
             className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center pt-1"
           >

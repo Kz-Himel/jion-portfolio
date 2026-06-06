@@ -2,20 +2,18 @@
 import { motion } from "framer-motion";
 import {
   FaBehance,
-  FaDribbble,
   FaLinkedinIn,
   FaInstagram,
-  FaTwitter,
+  FaFacebook,
 } from "react-icons/fa";
 import { FiArrowUp } from "react-icons/fi";
 import { portfolioData } from "@/data/portfolio";
 
 const socials = [
-  { icon: <FaBehance />, href: "#", label: "Behance" },
-  { icon: <FaDribbble />, href: "#", label: "Dribbble" },
-  { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
-  { icon: <FaInstagram />, href: "#", label: "Instagram" },
-  { icon: <FaTwitter />, href: "#", label: "Twitter" },
+  { icon: <FaBehance />, href: "www.behance.net/mdjionmia", label: "Behance" },
+  { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/mdjionmia", label: "LinkedIn" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/jion.cmt", label: "Instagram" },
+  { icon: <FaFacebook />, href: "https://www.facebook.com/md.jion.mia.2025", label: "Twitter" },
 ];
 
 const navLinks = [
@@ -41,13 +39,13 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-brand-orange rounded-lg rotate-45" />
                 <div className="absolute inset-[3px] bg-dark-base rounded-md rotate-45" />
                 <span className="absolute inset-0 flex items-center justify-center font-display font-bold text-sm text-brand-orange z-10">
-                  AN
+                  SG
                 </span>
               </div>
 
               <div>
                 <div className="font-display font-bold text-white text-sm">
-                  Alex Nova
+                  Md Jion Mia
                 </div>
                 <div className="font-mono text-[10px] text-brand-orange/60 tracking-widest uppercase">
                   Graphics Designer
@@ -145,7 +143,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/[0.04]">
           <p className="text-white/25 text-xs font-mono">
-            © {new Date().getFullYear()} Alex Nova. All rights reserved.
+            © {new Date().getFullYear()} Md Jion Mia All rights reserved.
           </p>
 
           <p className="text-white/20 text-xs font-mono">

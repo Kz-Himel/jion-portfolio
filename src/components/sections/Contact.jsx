@@ -14,9 +14,8 @@ import {
   FaFacebookMessenger,
   FaLinkedinIn,
   FaBehance,
-  FaDribbble,
   FaInstagram,
-  FaTwitter,
+  FaFacebook,
 } from "react-icons/fa";
 import { portfolioData } from "@/data/portfolio";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -65,11 +64,10 @@ const contactMethods = [
 ];
 
 const socials = [
-  { icon: <FaBehance />, href: "#", label: "Behance" },
-  { icon: <FaDribbble />, href: "#", label: "Dribbble" },
-  { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
-  { icon: <FaInstagram />, href: "#", label: "Instagram" },
-  { icon: <FaTwitter />, href: "#", label: "Twitter" },
+  { icon: <FaBehance />, href: "www.behance.net/mdjionmia", label: "Behance" },
+  { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/mdjionmia", label: "LinkedIn" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/jion.cmt", label: "Instagram" },
+  { icon: <FaFacebook />, href: "https://www.facebook.com/md.jion.mia.2025", label: "Twitter" },
 ];
 
 export default function Contact() {

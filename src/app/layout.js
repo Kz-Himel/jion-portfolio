@@ -1,5 +1,4 @@
 import "./globals.css";
-import { Providers } from "./providers";
 
 export const metadata = {
   title: "Md Jion Mia | Graphics Designer Portfolio",
@@ -16,7 +15,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="bg-dark-base text-white antialiased">
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   );

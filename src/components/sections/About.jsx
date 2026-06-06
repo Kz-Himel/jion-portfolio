@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 
 import { FiCheckCircle } from "react-icons/fi";
 
-import {
-  HiOutlineSparkles,
-} from "react-icons/hi";
+import { HiOutlineSparkles } from "react-icons/hi";
 
 import { portfolioData } from "@/data/portfolio";
 
@@ -35,14 +33,10 @@ const highlights = [
 ];
 
 export default function About() {
-  const { personal } =
-    portfolioData;
+  const { personal } = portfolioData;
 
   return (
-    <section
-      id="about"
-      className="relative py-28 overflow-hidden"
-    >
+    <section id="about" className="relative py-28 overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-cyan/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -67,10 +61,7 @@ export default function About() {
                 <div className="absolute inset-0 hex-bg opacity-30" />
 
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 400 500"
-                    className="w-full h-full"
-                  >
+                  <svg viewBox="0 0 400 500" className="w-full h-full">
                     <defs>
                       <linearGradient
                         id="about-grad1"
@@ -251,15 +242,11 @@ export default function About() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="glass-orange rounded-2xl px-5 py-3">
                     <p className="font-display font-bold text-white text-lg">
-                      {
-                        personal.name
-                      }
+                      {personal.name}
                     </p>
 
                     <p className="text-brand-orange/80 text-sm font-mono">
-                      {
-                        personal.title
-                      }
+                      {personal.title}
                     </p>
                   </div>
                 </div>
@@ -273,9 +260,7 @@ export default function About() {
               className="absolute -right-6 top-16 glass-cyan rounded-2xl px-5 py-4 glow-cyan hidden lg:block"
             >
               <div className="font-display font-black text-3xl gradient-text-cyan">
-                {
-                  personal.projects
-                }
+                {personal.projects}
               </div>
 
               <div className="text-white/50 text-xs font-mono uppercase tracking-widest mt-1">
@@ -288,16 +273,11 @@ export default function About() {
                 y: 0,
               }}
               animate={{
-                y: [
-                  0,
-                  -12,
-                  0,
-                ],
+                y: [0, -12, 0],
               }}
               transition={{
                 duration: 4,
-                repeat:
-                  Infinity,
+                repeat: Infinity,
                 delay: 2,
               }}
               className="absolute -left-6 bottom-20 glass-orange rounded-2xl px-5 py-4 glow-orange hidden lg:block"
@@ -307,9 +287,7 @@ export default function About() {
 
                 <div>
                   <div className="font-display font-black text-xl gradient-text-orange">
-                    {
-                      personal.awards
-                    }
+                    {personal.awards}
                   </div>
 
                   <div className="text-white/50 text-xs font-mono uppercase tracking-widest">
@@ -328,9 +306,7 @@ export default function About() {
             variants={stagger}
             className="space-y-6"
           >
-            <motion.div
-              variants={fadeUp}
-            >
+            <motion.div variants={fadeUp}>
               <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-orange/70 mb-3 block">
                 — Hello there
               </span>
@@ -338,15 +314,9 @@ export default function About() {
               <h3 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight">
                 Crafting digital
                 <br />
-
                 <span className="gradient-text-mixed">
                   experiences
-                </span>{" "}
-                that{" "}
-
-                <span className="gradient-text-cyan">
-                  convert
-                </span>
+                </span> that <span className="gradient-text-cyan">convert</span>
               </h3>
             </motion.div>
 
@@ -354,44 +324,31 @@ export default function About() {
               variants={fadeUp}
               className="text-white/55 leading-relaxed text-lg"
             >
-              {
-                personal.bio
-              }
+              {personal.bio}
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className="text-white/40 leading-relaxed"
             >
-              {
-                personal.bioExtended
-              }
+              {personal.bioExtended}
             </motion.p>
 
             <motion.div
               variants={fadeUp}
               className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2"
             >
-              {highlights.map(
-                (
-                  item,
-                  i
-                ) => (
-                  <motion.div
-                    key={i}
-                    variants={
-                      fadeUp
-                    }
-                    className="flex items-center gap-3 glass rounded-xl px-4 py-3"
-                  >
-                    <FiCheckCircle className="text-brand-orange w-4 h-4 flex-shrink-0" />
+              {highlights.map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  className="flex items-center gap-3 glass rounded-xl px-4 py-3"
+                >
+                  <FiCheckCircle className="text-brand-orange w-4 h-4 flex-shrink-0" />
 
-                    <span className="text-white/70 text-sm">
-                      {item}
-                    </span>
-                  </motion.div>
-                )
-              )}
+                  <span className="text-white/70 text-sm">{item}</span>
+                </motion.div>
+              ))}
             </motion.div>
 
             <motion.div
@@ -400,62 +357,39 @@ export default function About() {
             >
               {[
                 {
-                  label:
-                    "Location",
+                  label: "Location",
 
-                  value:
-                    personal.location,
+                  value: personal.location,
                 },
 
                 {
-                  label:
-                    "Experience",
+                  label: "Experience",
 
-                  value:
-                    personal.experience +
-                    " Years",
+                  value: personal.experience + " Years",
                 },
 
                 {
-                  label:
-                    "Status",
+                  label: "Status",
 
-                  value:
-                    personal.available
-                      ? "Available"
-                      : "Busy",
+                  value: personal.available ? "Available" : "Busy",
 
-                  green:
-                    personal.available,
+                  green: personal.available,
                 },
-              ].map(
-                (
-                  info,
-                  i
-                ) => (
-                  <div
-                    key={i}
+              ].map((info, i) => (
+                <div key={i}>
+                  <p className="text-white/30 text-xs font-mono uppercase tracking-wider mb-1">
+                    {info.label}
+                  </p>
+
+                  <p
+                    className={`font-medium text-sm ${
+                      info.green ? "text-green-400" : "text-white/80"
+                    }`}
                   >
-                    <p className="text-white/30 text-xs font-mono uppercase tracking-wider mb-1">
-                      {
-                        info.label
-                      }
-                    </p>
-
-                    <p
-                      className={`font-medium text-sm ${
-                        info.green
-                          ? "text-green-400"
-                          : "text-white/80"
-                      }`}
-                    >
-                      {
-                        info.value
-                      }
-                    </p>
-                  </div>
-                )
-              )}
+                    {info.value}
+                  </p>
+                </div>
+              ))}
             </motion.div>
           </motion.div>
         </div>
