@@ -145,7 +145,7 @@ export default function Navbar() {
                     onClick={() => handleNavClick(link.href)}
                     className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 group ${
                       isActive
-                        ? "text-brand-orange"
+                        ? "text-orange-400"
                         : "text-white/60 hover:text-white"
                     }`}
                   >

@@ -18,12 +18,13 @@ import {
 } from "@/lib/animations";
 
 const highlights = [
+  "Thumbnail Design",
+  "Social Media Design",
   "Brand Identity & Logo Design",
-  "UI/UX Design & Prototyping",
   "Social Media & Campaign Design",
   "Print & Packaging Design",
   "Design System Architecture",
-  "Creative Direction",
+  "Creative Social Media Adds Design",
 ];
 
 export default function About() {
