@@ -64,10 +64,10 @@ const contactMethods = [
 ];
 
 const socials = [
-  { icon: <FaBehance />, href: "www.behance.net/mdjionmia", label: "Behance" },
+  { icon: <FaBehance />, href: "https://www.behance.net/mdjionmia", label: "Behance" },
   { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/mdjionmia", label: "LinkedIn" },
   { icon: <FaInstagram />, href: "https://www.instagram.com/jion.cmt", label: "Instagram" },
-  { icon: <FaFacebook />, href: "https://www.facebook.com/md.jion.mia.2025", label: "Twitter" },
+  { icon: <FaFacebook />, href: "https://www.facebook.com/md.jion.mia.2025", label: "Facebook" },
 ];
 
 export default function Contact() {
@@ -85,19 +85,32 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
 
-    await new Promise((r) => setTimeout(r, 1800));
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
 
-    setSending(false);
-    setSent(true);
-
-    setFormState({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-
-    setTimeout(() => setSent(false), 5000);
+      if (res.ok) {
+        setSent(true);
+        setFormState({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        console.error("Failed to send message via Resend");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    } finally {
+      setSending(false);
+      setTimeout(() => setSent(false), 5000);
+    }
   };
 
   return (
@@ -143,9 +156,7 @@ export default function Contact() {
               <motion.a
                 key={i}
                 href={method.href}
-                target={
-                  method.href.startsWith("http") ? "_blank" : undefined
-                }
+                target="_blank"
                 rel="noopener noreferrer"
                 variants={fadeUp}
                 whileHover={{ x: 6, scale: 1.02 }}
@@ -195,6 +206,8 @@ export default function Contact() {
                   <motion.a
                     key={i}
                     href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.15, y: -3 }}
                     whileTap={{ scale: 0.9 }}
                     className="w-10 h-10 glass rounded-xl flex items-center justify-center text-white/50 hover:text-white transition-all duration-300"
@@ -222,7 +235,7 @@ export default function Contact() {
                 Send a Message
               </h3>
               <p className="text-white/40 text-sm mb-8">
-                Fill out the form and Ill get back to you within 24 hours.
+                Fill out the form and I'll get back to you within 24 hours.
               </p>
 
               {sent ? (
@@ -255,7 +268,7 @@ export default function Contact() {
                           name: e.target.value,
                         })
                       }
-                      className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent"
+                      className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none"
                     />
 
                     <input
@@ -269,7 +282,7 @@ export default function Contact() {
                           email: e.target.value,
                         })
                       }
-                      className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent"
+                      className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none"
                     />
                   </div>
 
@@ -283,7 +296,7 @@ export default function Contact() {
                         subject: e.target.value,
                       })
                     }
-                    className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent"
+                    className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none"
                   />
 
                   <textarea
@@ -297,13 +310,13 @@ export default function Contact() {
                         message: e.target.value,
                       })
                     }
-                    className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent resize-none"
+                    className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent resize-none outline-none"
                   />
 
                   <button
                     type="submit"
                     disabled={sending}
-                    className="w-full py-4 rounded-xl bg-brand-orange text-white flex items-center justify-center gap-2"
+                    className="w-full py-4 rounded-xl bg-brand-orange text-white flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     {sending ? "Sending..." : "Send Message"}
                     <FiSend />
