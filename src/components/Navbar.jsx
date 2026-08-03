@@ -97,8 +97,8 @@ export default function Navbar() {
         }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "glass border-b border-white/[0.06] py-3"
-            : "py-5 bg-transparent"
+            ? "glass border-b border-white/[0.06] py-1"
+            : "bg-transparent py-1"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -115,7 +115,7 @@ export default function Navbar() {
               scale: 1.02,
             }}
           >
-            <div className="relative w-14 h-14">
+            <div className="relative lg:w-16 lg:h-16 md:w-12 md:h-12">
               {/* Logo Image */}
               <Image
                 src="/images/logo.png"
