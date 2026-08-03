@@ -110,12 +110,12 @@ export default function Navbar() {
 
               handleNavClick("#home");
             }}
-            className="flex items-center gap-2 group"
+            className="flex items-center group"
             whileHover={{
               scale: 1.02,
             }}
           >
-            <div className="relative w-9 h-9">
+            <div className="relative w-14 h-14">
               {/* Logo Image */}
               <Image
                 src="/images/logo.png"
@@ -138,7 +138,7 @@ export default function Navbar() {
                     onClick={() => handleNavClick(link.href)}
                     className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 group ${
                       isActive
-                        ? "text-orange-400"
+                        ? "text-orange-400 border border-orange-400 rounded-4xl"
                         : "text-white/60 hover:text-white"
                     }`}
                   >
