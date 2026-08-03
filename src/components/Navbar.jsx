@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 
+import Image from "next/image";
+
 const navLinks = [
   {
     label: "Home",
@@ -114,23 +116,14 @@ export default function Navbar() {
             }}
           >
             <div className="relative w-9 h-9">
-              <div className="absolute inset-0 bg-brand-orange rounded-lg rotate-45 group-hover:rotate-[60deg] transition-transform duration-300" />
-
-              <div className="absolute inset-[3px] bg-dark-base rounded-md rotate-45" />
-
-              <span className="absolute inset-0 flex items-center justify-center font-display font-bold text-sm text-brand-orange z-10">
-                SG
-              </span>
-            </div>
-
-            <div>
-              <div className="font-display font-bold text-white text-sm leading-none">
-                Md Jion Mia
-              </div>
-
-              {/* <div className="font-mono text-[10px] text-brand-orange/70 tracking-widest uppercase">
-                Designer
-              </div> */}
+              {/* Logo Image */}
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                fill
+                className="object-contain" 
+                priority
+              />
             </div>
           </motion.a>
 
