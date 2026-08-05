@@ -115,7 +115,7 @@ export default function Navbar() {
               scale: 1.02,
             }}
           >
-            <div className="relative lg:w-16 lg:h-16 md:w-12 md:h-12 sm:w-10 sm:h-10">
+            <div className="relative lg:w-16 lg:h-16 md:w-14 md:h-14 sm:w-12 sm:h-12">
               {/* Logo Image */}
               <Image
                 src="/images/logo.png"
@@ -138,7 +138,7 @@ export default function Navbar() {
                     onClick={() => handleNavClick(link.href)}
                     className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 group ${
                       isActive
-                        ? "text-orange-400 border border-orange-400 rounded-4xl"
+                        ? "text-orange-400"
                         : "text-white/60 hover:text-white"
                     }`}
                   >

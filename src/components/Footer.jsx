@@ -39,7 +39,7 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-brand-orange rounded-lg rotate-45" />
                 <div className="absolute inset-[3px] bg-dark-base rounded-md rotate-45" />
                 <span className="absolute inset-0 flex items-center justify-center font-display font-bold text-sm text-brand-orange z-10">
-                  SG
+                  <img src="/images/logo.png" alt="Logo" />
                 </span>
               </div>
 
