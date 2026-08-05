@@ -34,6 +34,7 @@ const contactMethods = [
     label: "Email",
     value: portfolioData.personal.email,
     href: `mailto:${portfolioData.personal.email}`,
+    appScheme: null,
     color: "#FF6B1A",
     desc: "Response within 24h",
   },
@@ -42,6 +43,7 @@ const contactMethods = [
     label: "Phone",
     value: portfolioData.personal.phone,
     href: `tel:${portfolioData.personal.phone}`,
+    appScheme: null,
     color: "#00D4FF",
     desc: "Mon–Fri, 9AM–6PM EST",
   },
@@ -50,6 +52,7 @@ const contactMethods = [
     label: "WhatsApp",
     value: "Chat on WhatsApp",
     href: `https://wa.me/${portfolioData.personal.whatsapp}`,
+    appScheme: `whatsapp://send?phone=${portfolioData.personal.whatsapp}`,
     color: "#25D366",
     desc: "Quick response guaranteed",
   },
@@ -58,16 +61,33 @@ const contactMethods = [
     label: "Messenger",
     value: "Message on Facebook",
     href: "https://m.me/alexnovadesign",
+    appScheme: "fb-messenger://user/alexnovadesign",
     color: "#0099FF",
     desc: "Available on messenger",
   },
 ];
 
 const socials = [
-  { icon: <FaBehance />, href: "https://www.behance.net/mdjionmia", label: "Behance" },
-  { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/mdjionmia", label: "LinkedIn" },
-  { icon: <FaInstagram />, href: "https://www.instagram.com/jion.cmt", label: "Instagram" },
-  { icon: <FaFacebook />, href: "https://www.facebook.com/md.jion.mia.2025", label: "Facebook" },
+  {
+    icon: <FaBehance />,
+    href: "https://www.behance.net/mdjionmia",
+    label: "Behance",
+  },
+  {
+    icon: <FaLinkedinIn />,
+    href: "https://www.linkedin.com/in/mdjionmia",
+    label: "LinkedIn",
+  },
+  {
+    icon: <FaInstagram />,
+    href: "https://www.instagram.com/jion.cmt",
+    label: "Instagram",
+  },
+  {
+    icon: <FaFacebook />,
+    href: "https://www.facebook.com/md.jion.mia.2025",
+    label: "Facebook",
+  },
 ];
 
 export default function Contact() {
@@ -80,6 +100,27 @@ export default function Contact() {
 
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+
+  // App redirect handler with fallback to web browser
+  const handleLinkClick = (e, method) => {
+    if (!method.appScheme) return;
+
+    e.preventDefault();
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      window.location.href = method.appScheme;
+
+      setTimeout(() => {
+        if (!document.hidden) {
+          window.location.href = method.href;
+        }
+      }, 1500);
+    } else {
+      window.open(method.href, "_blank", "noopener,noreferrer");
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -114,10 +155,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-28 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-orange/5 rounded-full blur-[150px] pointer-events-none" />
+    <section id="contact" className="relative py-16 md:py-28 overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[700px] h-[400px] bg-brand-orange/5 rounded-full blur-[120px] sm:blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <SectionHeading
           label="Get In Touch"
           title="Let's Create"
@@ -125,8 +166,8 @@ export default function Contact() {
           description="Have a project in mind? Let's build something extraordinary."
         />
 
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
-          {/* Left */}
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start mt-8 md:mt-12">
+          {/* Left Side */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -134,6 +175,7 @@ export default function Contact() {
             variants={stagger}
             className="lg:col-span-2 space-y-5"
           >
+            {/* Availability Badge */}
             <motion.div
               variants={fadeUp}
               className="glass-orange rounded-2xl p-5 glow-orange"
@@ -152,52 +194,56 @@ export default function Contact() {
               </p>
             </motion.div>
 
-            {contactMethods.map((method, i) => (
-              <motion.a
-                key={i}
-                href={method.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={fadeUp}
-                whileHover={{ x: 6, scale: 1.02 }}
-                className="flex items-center gap-4 glass rounded-2xl p-4 group cursor-pointer transition-all duration-300"
-              >
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
-                  style={{
-                    background: `rgba(${hexToRgb(method.color)},0.1)`,
-                    color: method.color,
-                    boxShadow: `0 0 15px rgba(${hexToRgb(
-                      method.color
-                    )},0.2)`,
-                  }}
+            {/* Contact Methods - 2 Columns on SM/MD Screens */}
+            <motion.div
+              variants={fadeUp}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4"
+            >
+              {contactMethods.map((method, i) => (
+                <motion.a
+                  key={i}
+                  href={method.href}
+                  onClick={(e) => handleLinkClick(e, method)}
+                  variants={fadeUp}
+                  whileHover={{ x: 4, scale: 1.01 }}
+                  className="flex items-center gap-3.5 glass rounded-2xl p-4 group cursor-pointer transition-all duration-300 border border-white/5 hover:border-white/10"
                 >
-                  {method.icon}
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="font-mono text-[10px] text-white/30 uppercase tracking-wider mb-0.5">
-                    {method.label}
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                    style={{
+                      background: `rgba(${hexToRgb(method.color)},0.1)`,
+                      color: method.color,
+                      boxShadow: `0 0 15px rgba(${hexToRgb(method.color)},0.2)`,
+                    }}
+                  >
+                    {method.icon}
                   </div>
-                  <div className="text-white/80 text-sm font-medium truncate">
-                    {method.value}
-                  </div>
-                  <div className="text-white/30 text-xs">
-                    {method.desc}
-                  </div>
-                </div>
 
-                <div
-                  className="opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ color: method.color }}
-                >
-                  →
-                </div>
-              </motion.a>
-            ))}
+                  <div className="flex-1 min-w-0">
+                    <div className="font-mono text-[10px] text-white/40 uppercase tracking-wider mb-0.5">
+                      {method.label}
+                    </div>
+                    <div className="text-white/90 text-sm font-medium truncate">
+                      {method.value}
+                    </div>
+                    <div className="text-white/40 text-xs truncate">
+                      {method.desc}
+                    </div>
+                  </div>
 
-            <motion.div variants={fadeUp}>
-              <p className="font-mono text-[10px] text-white/30 uppercase tracking-[0.3em] mb-3">
+                  <div
+                    className="opacity-0 group-hover:opacity-100 transition-opacity text-sm font-bold"
+                    style={{ color: method.color }}
+                  >
+                    →
+                  </div>
+                </motion.a>
+              ))}
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div variants={fadeUp} className="pt-2">
+              <p className="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-3">
                 Find me on
               </p>
 
@@ -210,7 +256,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.15, y: -3 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 glass rounded-xl flex items-center justify-center text-white/50 hover:text-white transition-all duration-300"
+                    className="w-10 h-10 glass rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all duration-300 border border-white/5"
                     title={s.label}
                   >
                     {s.icon}
@@ -228,13 +274,13 @@ export default function Contact() {
             variants={fadeRight}
             className="lg:col-span-3"
           >
-            <div className="glass rounded-3xl p-8 gradient-border relative overflow-hidden">
+            <div className="glass rounded-3xl p-6 sm:p-8 gradient-border relative overflow-hidden">
               <div className="absolute top-0 right-0 w-60 h-60 bg-brand-orange/5 rounded-full blur-[80px] pointer-events-none" />
 
               <h3 className="font-display font-bold text-white text-2xl mb-2">
                 Send a Message
               </h3>
-              <p className="text-white/40 text-sm mb-8">
+              <p className="text-white/50 text-sm mb-6 sm:mb-8">
                 Fill out the form and I'll get back to you within 24 hours.
               </p>
 
@@ -255,8 +301,11 @@ export default function Contact() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-5">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 sm:space-y-5"
+                >
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                     <input
                       type="text"
                       required
@@ -268,7 +317,7 @@ export default function Contact() {
                           name: e.target.value,
                         })
                       }
-                      className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none"
+                      className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none focus:border-brand-orange/50 transition-colors border border-white/10"
                     />
 
                     <input
@@ -282,7 +331,7 @@ export default function Contact() {
                           email: e.target.value,
                         })
                       }
-                      className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none"
+                      className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none focus:border-brand-orange/50 transition-colors border border-white/10"
                     />
                   </div>
 
@@ -296,7 +345,7 @@ export default function Contact() {
                         subject: e.target.value,
                       })
                     }
-                    className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none"
+                    className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent outline-none focus:border-brand-orange/50 transition-colors border border-white/10"
                   />
 
                   <textarea
@@ -310,13 +359,13 @@ export default function Contact() {
                         message: e.target.value,
                       })
                     }
-                    className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent resize-none outline-none"
+                    className="w-full glass rounded-xl px-4 py-3 text-white bg-transparent resize-none outline-none focus:border-brand-orange/50 transition-colors border border-white/10"
                   />
 
                   <button
                     type="submit"
                     disabled={sending}
-                    className="w-full py-4 rounded-xl bg-brand-orange text-white flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full py-4 rounded-xl bg-brand-orange hover:bg-brand-orange/90 transition-colors text-white font-medium flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     {sending ? "Sending..." : "Send Message"}
                     <FiSend />
