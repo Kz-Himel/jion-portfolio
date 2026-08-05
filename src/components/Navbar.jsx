@@ -115,13 +115,13 @@ export default function Navbar() {
               scale: 1.02,
             }}
           >
-            <div className="relative lg:w-16 lg:h-16 md:w-14 md:h-14 sm:w-12 sm:h-12">
-              {/* Logo Image */}
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 transition-all duration-200">
               <Image
                 src="/images/logo.png"
                 alt="Logo"
                 fill
-                className="object-contain" 
+                sizes="(max-width: 640px) 40px, (max-width: 768px) 48px, (max-width: 1024px) 56px, 64px"
+                className="object-contain"
                 priority
               />
             </div>
