@@ -115,7 +115,7 @@ export default function Navbar() {
               scale: 1.02,
             }}
           >
-            <div className="relative lg:w-16 lg:h-16 md:w-12 md:h-12">
+            <div className="relative lg:w-16 lg:h-16 md:w-12 md:h-12 sm:w-10 sm:h-10">
               {/* Logo Image */}
               <Image
                 src="/images/logo.png"
