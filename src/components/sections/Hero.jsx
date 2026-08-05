@@ -142,8 +142,8 @@ export default function Hero() {
               </motion.button>
 
               <motion.a
-                href="/resume.pdf"
-                download
+                href="/Jion_CV-graphic design.pdf"
+                target="_blank"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="px-6 py-3 rounded-xl font-semibold text-white/80 hover:text-white border border-white/10 glass transition-all duration-300 inline-flex items-center gap-2 justify-center text-sm sm:text-base"
